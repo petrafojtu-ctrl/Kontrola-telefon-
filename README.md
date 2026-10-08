@@ -1,33 +1,15 @@
-# Kontrola fakturovaných telefonních čísel – GitHub Pages
+# Kontrola telefonních čísel – verze 3
 
-Statická webová aplikace. PDF se zpracovává přímo v prohlížeči a telefonní čísla se porovnávají s přiloženou databází `databaze.json`.
+Nově obsahuje přehledové statistiky:
+- Aktivní vlastník + poslední kontrola starší než 1 rok
+- Telefonní čísla u ukončených vlastníků
+- Po nahrání PDF: fakturovaná čísla, kde stav SIM není „Vlastněno“
 
-## Soubory do kořene GitHub repozitáře
+Všechny KPI počítají unikátní telefonní čísla.
 
-- `index.html`
-- `styles.css`
-- `app.js`
-- `databaze.json`
+Pro aktualizaci GitHub Pages nahraj/přepiš:
+- index.html
+- styles.css
+- app.js
 
-## Zapnutí GitHub Pages
-
-1. Nahraj uvedené soubory do hlavní úrovně repozitáře.
-2. GitHub → **Settings** → **Pages**.
-3. V **Build and deployment** vyber **Deploy from a branch**.
-4. Branch: `main`, Folder: `/ (root)`.
-5. Klikni na **Save**.
-
-## První verze umí
-
-- nahrát textové PDF,
-- vyhledat telefonní čísla,
-- sjednotit formát na 9 číslic, včetně odstranění 420 / 421 / 36,
-- porovnat čísla s databází,
-- zobrazit vlastníka, oddělení, majetkovou kartu, stav, název a poslední kontrolu,
-- filtrovat nalezená / nenalezená čísla,
-- vyhledávat přímo v databázi,
-- exportovat výsledek do CSV.
-
-## Omezení
-
-Naskenované PDF bez textové vrstvy zatím neumí OCR. Detekci konkrétního formátu faktury lze zpřesnit podle vzorového PDF operátora.
+`databaze.json` není nutné znovu měnit, pokud už máš poslední verzi se stavem vlastníka.

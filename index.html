@@ -23,9 +23,27 @@
       <section class="hero">
         <div>
           <h2>Porovnání faktury s databází SIM karet</h2>
-          <p>Nahraj PDF fakturu. Aplikace vytáhne telefonní čísla, sjednotí jejich formát a porovná je s databází.</p>
+          <p>Nahraj PDF fakturu. Aplikace vytáhne telefonní čísla, sjednotí jejich formát a porovná je s databází. Nově zobrazuje také ID vlastníka a stav vlastníka.</p>
         </div>
         <div class="privacy">PDF se zpracovává pouze ve vašem prohlížeči.</div>
+      </section>
+
+      <section class="dashboard">
+        <div class="kpi-card kpi-attention">
+          <div class="kpi-label">Aktivní vlastník · kontrola &gt; 1 rok</div>
+          <div class="kpi-value" id="kpiOldActive">—</div>
+          <div class="kpi-note">unikátních telefonních čísel</div>
+        </div>
+        <div class="kpi-card kpi-risk">
+          <div class="kpi-label">Telefon u ukončeného vlastníka</div>
+          <div class="kpi-value" id="kpiTerminated">—</div>
+          <div class="kpi-note">unikátních telefonních čísel</div>
+        </div>
+        <div class="kpi-card kpi-invoice">
+          <div class="kpi-label">Fakturované · stav SIM ≠ Vlastněno</div>
+          <div class="kpi-value" id="kpiInvoiceNotOwned">—</div>
+          <div class="kpi-note" id="kpiInvoiceNote">nahraj PDF fakturu</div>
+        </div>
       </section>
 
       <div class="tabs">
@@ -85,8 +103,10 @@
                   <th>Země</th>
                   <th>Oddělení</th>
                   <th>Vlastník</th>
+                  <th>Vlastník (id)</th>
+                  <th>Stav vlastníka</th>
                   <th>Majetková karta</th>
-                  <th>Stav</th>
+                  <th>Stav SIM</th>
                   <th>Název</th>
                   <th>Poslední kontrola</th>
                   <th>Strana PDF</th>
@@ -103,9 +123,9 @@
         <div class="database-head">
           <div>
             <h3>Databáze SIM karet</h3>
-            <p>Vyhledání čísla, vlastníka, oddělení nebo majetkové karty.</p>
+            <p>Vyhledání čísla, vlastníka, ID vlastníka, oddělení nebo majetkové karty.</p>
           </div>
-          <input id="dbSearch" class="search wide" placeholder="Telefon, vlastník, oddělení, karta…">
+          <input id="dbSearch" class="search wide" placeholder="Telefon, vlastník, ID, oddělení, karta…">
         </div>
 
         <div class="table-wrap">
@@ -116,8 +136,10 @@
                 <th>Země</th>
                 <th>Oddělení</th>
                 <th>Vlastník</th>
+                <th>Vlastník (id)</th>
+                <th>Stav vlastníka</th>
                 <th>Majetková karta</th>
-                <th>Stav</th>
+                <th>Stav SIM</th>
                 <th>Název</th>
                 <th>Poslední kontrola</th>
               </tr>
@@ -134,7 +156,7 @@
       </section>
     </main>
 
-    <footer>První pracovní verze · kontrola probíhá lokálně v prohlížeči</footer>
+    <footer>Verze 2 · zobrazuje ID vlastníka a stav vlastníka · kontrola probíhá lokálně v prohlížeči</footer>
   </div>
 
   <script type="module" src="app.js"></script>
